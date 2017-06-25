@@ -2,7 +2,7 @@ import urllib2
 from bs4 import BeautifulSoup
 
 
-#open page
+#open page for algeria
 page=urllib2.urlopen('http://www.4icu.org/dz/')
 
 #parse page using bs4
