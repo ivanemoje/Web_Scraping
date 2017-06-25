@@ -18,4 +18,4 @@ for tr in soup.find_all('tr')[1:]:
     tds = tr.find_all('td')
     print tds[1].text
     cur.execute("""INSERT INTO university_algeria2 VALUES (%s);""",tds[1].text)
-   
+conn.commit()
