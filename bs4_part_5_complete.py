@@ -44,6 +44,10 @@ for i in range(len(africa)):
         tds = tr.find_all('td')
         params=[tds[1].text, country]
         cur.execute("""INSERT INTO university_africa VALUES (%s,%s);""",params)
+      #write to csv file
+        with open("/home/ivan/Documents/uni_csv.csv", "a") as csv_file:
+            writer = csv.writer(csv_file)
+            writer.writerow([params, datetime.now()])
     conn.commit() 
 print "complete"
 
