@@ -39,7 +39,7 @@ for i in range(len(africa)):
     country=country_full[20:]
     country = ''.join(country)
     
-    #to obtain universities per country
+    #to obtain universities per country and insert into database
     for tr in soup.find_all('tr')[1:]:
         tds = tr.find_all('td')
         params=[tds[1].text, country]
