@@ -42,7 +42,8 @@ for i in range(len(africa)):
     #to obtain universities per country
     for tr in soup.find_all('tr')[1:]:
         tds = tr.find_all('td')
-        cur.execute("""INSERT INTO university_africa VALUES (%s);""",tds[1].text)
+        params=[tds[1].text, country]
+        cur.execute("""INSERT INTO university_africa VALUES (%s,%s);""",params)
     conn.commit() 
 print "complete"
 
